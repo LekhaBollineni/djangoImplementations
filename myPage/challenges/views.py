@@ -17,21 +17,15 @@ challenges = {
     "september": "Learn Django for at least 20 minutes every day.",
     "october": "Eat no meat for the entire month.",
     "november": "Walk for at least 20 minutes every day.",
-    "december": "Enjoy Christmas!"
+    "december": None
 }
 
 # Challenges index page listing all the challenge months
 def challenges_index(request):
     months = list(challenges.keys())
-    for month in months:
-        # /challenges/january
-        month_path = reverse("month-challenge", args=[month]) 
-        # <a href="/challenges/january">January</a>
-        months[months.index(month)] = f"<a href=\"{month_path}\">{month.capitalize()}</a>" 
-
-    # <ul><li><a href="/challenges/january">January</a></li><li><a href="/challenges/february">February</a></li></ul>
-    response_data = f"<ul><li>{'</li><li>'.join(months)}</li></ul>" 
-    return HttpResponse(response_data)
+    return render(request, "challenges/index.html", {
+        "months": months
+    })
 
 
 # Challenge page for a specific month by number
