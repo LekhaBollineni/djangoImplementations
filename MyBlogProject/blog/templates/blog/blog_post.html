@@ -1,0 +1,7 @@
+{% extends base.html%}
+{% block pageTitle %}{{blog_title | title}}{% endblock %}
+{% block content %}
+    {% include "snippets/homeNavBar.html" %}
+    <h1>{{blogPost.title}}</h1>
+    <p>{{blogPost.content}}</p>
+{% endblock %}

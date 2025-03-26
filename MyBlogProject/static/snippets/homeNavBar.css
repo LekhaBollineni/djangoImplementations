@@ -1,0 +1,15 @@
+.homeNavBar{
+    
+    background-color: #968441c5;
+    border-bottom: 0.1rem solid #e9ecef;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+.homeNavBar nav{
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

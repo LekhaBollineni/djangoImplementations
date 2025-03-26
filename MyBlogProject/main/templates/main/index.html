@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}Home | Lekha's Blog{% endblock %}
+
+{% block content %}
+    {% include "snippets/homeNavBar.html" %}
+    <h1>Welcome to Lekha's Blog Project</h1>
+    <p>Go to <a href={% url "blog_index" %}>blogs</a></p>
+ {% endblock %}
